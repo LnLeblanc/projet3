@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Cette application vous permet de réserver un vélo dans l'une des stations Velo'V de la ville de Lyon en toute simplicité grâce à une carte Google Map, un formulaire de réservation et des informations en temps réel.">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>Application Velo'V</title>
+        <link rel="stylesheet" href="css/fonts/fontawesome/font-awesome.css">
+        <link rel="stylesheet" href="css/projet3.css">
+        <link rel="icon" href="img/favicon.png">
+    </head>
+
+    <body>
+        <div id="blocPage">
+            <header id="header">
+                <!-- Flèche gauche pour faire défiler les images du slider -->
+                <i class="fa fa-chevron-left" id="gauche"></i>
+                <!-- slider : images et textes de présentation -->
+                <div id="img1" class="affiche"><img src="img/velov_1.jpg" alt="velo Velo'V à une station">
+                    <div class="texte"><h1>La ville de Lyon vous souhaite la bienvenue !</h1>
+                    <p>Cliquez sur les flèches ou appuyez sur les touches directionnelles du clavier pour continuer</p></div>
+                </div>
+                <div id="img2"><img src="img/velov_2.jpg" alt="Vélos Velo'V dans les rues de Lyon">
+                    <div class="texte"><p>Ce site vous permettra de réserver un vélo dans l'une de nos stations Velo'V en toute simplicité</p></div>
+                </div>
+                <div id="img3"><img src="img/velov_3.jpg" alt="Carte de Lyon">
+                    <div class="texte"><p>Commencez par sélectionner la station de votre choix sur la carte<br>
+                        Marqueur vert : c'est ouvert, marqueur rouge : la station est fermée, marqueur jaune : aucun vélo disponible pour le moment</p></div>
+                </div>
+                <div id="img4"><img src="img/velov_4.jpg" alt="Station Velo'V">
+                    <div class="texte"><p>Le formulaire de réservation vous indiquera son adresse et le nombre de vélos disponibles</p></div>
+                </div>
+                <div id="img5"><img src="img/velov_5.jpg" alt="Station Velo'V">
+                    <div class="texte"><p>Une signature vous sera demandée pour réserver votre vélo</p></div>
+                </div>
+                <div id="img6"><img src="img/velov_6.jpg" alt="Un velo en attente à une station Velo'V">
+                    <div class="texte"><p>Une fois la réservation validée, votre vélo vous attendra pendant 20 minutes à la station</p></div>
+                </div>
+                <div id="img7"><img src="img/velov_7.jpg" alt="Utilisateur d'un Velo'V">
+                    <div class="texte"><p>Il ne nous reste plus qu'à vous souhaiter bonne route !</p></div>
+                </div>
+                <!-- Flèche droite pour faire défiler les images du slider -->
+                <i class="fa fa-chevron-right" id="droite"></i>
+            </header>
+            <section id="cercles">
+                <!-- Petits ronds sous la photo pour se repérer dans le slider -->
+                <i class="fa fa-circle" id="cercle1"></i>
+                <i class="fa fa-circle-o" id="cercle2"></i>
+                <i class="fa fa-circle-o" id="cercle3"></i>
+                <i class="fa fa-circle-o" id="cercle4"></i>
+                <i class="fa fa-circle-o" id="cercle5"></i>
+                <i class="fa fa-circle-o" id="cercle6"></i>
+                <i class="fa fa-circle-o" id="cercle7"></i>                
+            </section>
+            <section id="carte">
+                <!-- carte Google Maps -->
+                <div id="map">
+
+                </div>
+                <aside id="details">
+                <!-- détails de la station, apparaît quand on sélectionne une station -->
+                    <h2>Détails de la station</h2>
+                    <p>Station <span id="nomStation"></span></p>
+                    <p>Adresse : <span id="adresse"></span></p>
+                    <span id="ouvert"></span>
+                    <p><span id="places"></span> places</p>
+                    <p><span id="velo"></span> vélos disponibles</p>
+                    <button id="boutonRes">Réserver</button>
+                    <!-- Canvas pour la signature : texte, cadre et boutons pour effacer ou confirmer -->
+                    <div id="cadreCanevas">
+                        <p>Signez dans le cadre pour réserver un vélo</p>
+                        <canvas id="canevas" width="200" height="150"><p>Si vous voyez ce message c'est que votre navigateur n'est pas à jour.</p></canvas><br>
+                        <button id="effacer">Effacer</button>
+                        <button id="reserver">Réserver</button>
+                    </div>
+                </aside>
+            </section>
+            <!-- Texte de confirmation de réservation -->
+            <p id="etatRes">Aucune réservation effectuée pour l'instant.</p>
+            <p id="etatRes2">1 vélo réservé à la station <span id="getStation"></span> pour <span id="minutes"></span> minute(s) et <span id="secondes"></span> seconde(s)</p>
+            <footer>
+                <!-- Pied de page, mentions légales -->
+                <p>Site école réalisé par Hélène Leblanc pour la ville de Lyon pour un projet OpenClassrooms<br>
+                Hébergé par 1&amp;1<br>
+                Images libres de droits récupérées sur pixabay.com, wikipedia.org et wikimedia.org</p>
+            </footer>
+            <!-- Liens vers les fichiers JS -->
+            <script type="text/javascript" src="js/ajax.js"></script>
+            <script type="text/javascript"  src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+            </script>
+            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsfoXA-mwUT7PsZADCSNoD6UruZP3gI74&callback=initMap" async defer></script>
+            <script type="text/javascript" src="js/slider.js"></script>
+            <script type="text/javascript" src="js/map.js"></script>
+            <script type="text/javascript"  src="js/canevas.js"></script>
+            <script type="text/javascript" src="js/reservation.js"></script>
+        </div>
+    </body>
+</html>
